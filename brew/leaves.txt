@@ -1,0 +1,7 @@
+neovim
+pipenv
+git
+tree
+fzf
+zsh-autosuggestions
+
