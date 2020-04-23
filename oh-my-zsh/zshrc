@@ -30,5 +30,7 @@ else
 fi
 
 # Aliases
-alias d=docker
-alias t=tree
+alias ll="ls -la"
+alias vim="nvim"
+alias d="docker"
+alias dc="docker-compose"

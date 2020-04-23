@@ -3,5 +3,6 @@ pipenv
 git
 tree
 fzf
+ripgrep
 zsh-autosuggestions
 
