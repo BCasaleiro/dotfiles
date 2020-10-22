@@ -23,6 +23,8 @@ set tabstop=4			                            " Insert 4 spaces for a tab.
 set shiftwidth=4		                            " Number of spaces for identation.
 set expandtab			                            " Use spaces for tabs.
 
+set autochdir                                       " Working directory will always be the same as your working directory
+
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
 
@@ -43,8 +45,7 @@ Plug 'Konfekt/FastFold'
 
 call plug#end()
 
-let g:python_host_prog = '/Users/bernardocasaleiro/.config/nvim/venv/bin/python'
-let g:python3_host_prog = '/Users/bernardocasaleiro/.config/nvim/venv/bin/python3'
+let g:python3_host_prog = '/Users/bernardocasaleiro/.config/nvim/venv/bin/python'
 
 let g:deoplete#enable_at_startup = 1                " Enable deoplete at startup.
 
@@ -58,6 +59,11 @@ let g:neoformat_basic_format_retab = 1              " Enable neoformat tab to sp
 let g:neoformat_basic_format_trim = 1               " Enable neoformat trimmming of trailing whitespace.
 
 let g:neomake_python_enabled_makers = ['pylint']    " Set pylint as the Python code checker.
+call neomake#configure#automake('nrwi', 500)        " Automatically start syntax check.
+
+let g:NERDDefaultAlign = 'left'                     " Align line-wise comment delimiters flush left instead of following code indentation
+
+autocmd CursorMoved * exe printf('match StatusLineNC /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
 " Theming
 syntax enable
