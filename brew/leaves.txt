@@ -1,8 +1,8 @@
 neovim
-pipenv
 git
-tree
+bat
 fzf
 ripgrep
+tree
 zsh-autosuggestions
 
